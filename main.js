@@ -1,6 +1,5 @@
 function addNewWEField() {
-  //console.log("hello");
-
+  
   let newNode = document.createElement("textarea");
   newNode.classList.add("form-control");
   newNode.classList.add("weField");
@@ -48,10 +47,11 @@ function generateCV() {
   //adress
   document.getElementById("addressT").innerHTML =
     document.getElementById("addressField").value;
+  
   //important link
   document.getElementById("fbT").innerHTML =
     document.getElementById("fbField").value;
-  //adress
+  
   document.getElementById("linkedT").innerHTML =
     document.getElementById("linkedField").value;
 
@@ -59,7 +59,7 @@ function generateCV() {
   document.getElementById("objectiveT").innerHTML =
     document.getElementById("objectiveField").value;
 
-  //we
+  //work experience and Academic Qualifications
 
   let wes = document.getElementsByClassName("weField");
   let str = "";
