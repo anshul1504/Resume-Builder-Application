@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder Project | JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="cv-form">
+      <h1 class="text-center mt-5 heading text-primary">
+        Resume Builder Application
+      </h1>
+      <p class="text-center text-secondary">
+        &copy; The Webfix | All Right Reserved
+      </p>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-center pxy-3">Personal Information</h3>
+          <div class="form-group mt-2">
+            <label for="nameField" class="my-2">Your Full Name</label>
+            <input
+              type="text"
+              id="nameField"
+              placeholder="Enter here name"
+              class="form-control"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="contactField" class="my-2">Your Contact Number</label>
+            <input
+              type="text"
+              id="contactField"
+              placeholder="Enter here number"
+              class="form-control"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="addressField" class="my-2">Your Complete Address</label>
+            <textarea
+              id="addressField"
+              placeholder="Enter here address"
+              class="form-control"
+              rows="4"
+              autocomplete="off"
+            ></textarea>
+          </div>
+          <p class="text-secondary my-3">Important Links</p>
+
+          <div class="form-group">
+            <label for="linkedField" class="my-2">LinkedIn</label>
+            <input
+              type="text"
+              id="linkedField"
+              placeholder="Enter here link"
+              class="form-control"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group mt-1">
+            <label for="fbField" class="my-2">Facebook</label>
+            <input
+              type="text"
+              autocomplete="off"
+              id="fbField"
+              placeholder="Enter here link"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center pxy-3">Professional Information</h3>
+          <div class="form-group mt-2">
+            <label for="" class="my-2">Objective</label>
+            <textarea
+              id="objectiveField"
+              autocomplete="off"
+              placeholder="Enter here Objective"
+              class="form-control"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="form-group mt-2" id="we">
+            <label for="" class="my-2">Work Experience</label>
+            <textarea
+              placeholder="Enter Here"
+              class="form-control weField"
+              
+              autocomplete="off"
+              rows="3"
+            ></textarea>
+
+            <div class="container text-center mt-2" id="weAddButton">
+              <button onclick="addNewWEField()" class="btn btn-primary btn-sm">
+                Add Work Experience
+              </button>
+            </div>
+          </div>
+          <div class="form-group mt-2" id="aq">
+            <label for="" class="my-2">Academic Qualification</label>
+            <textarea
+              placeholder="Enter Here"
+              class="form-control eqField"
+              
+              autocomplete="off"
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-2" id="aqAddButton">
+              <button class="btn btn-primary btn-sm" onclick="addNewAQField()">
+                Add Academic Qualification
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-3">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg">
+          Generate CV
+        </button>
+      </div>
+    </div>
+
+    <div class="container" id="cv-template">
+      <div class="row">
+        <div class="col-md-4 text-center py-5 background">
+          <img src="profile.png" class="img-fluid myimg" alt="" />
+          <div class="container">
+            <p id="nameT1">Miracle Doe</p>
+            <p id="contactT">+91 98xxx xxx xx5</p>
+            <p id="addressT">458-sector D, Mumbai 452110, India</p>
+            <hr />
+            <p id="linkedT"><a href="#1">https://www.facebook.com/the_webfix</a></p>
+            <p id="fbT"><a href="#1">https://www.facebook.com/the_webfix</a></p>
+          </div>
+        </div>
+        <div class="col-md-8 py-5">
+          <h1 id="nameT2" class="text-center" style="font-weight: 700">Miracle Doe</h1>
+          <div class="card mt-4">
+            <div class="card-header background">
+              <h3>Objective</h3>
+            </div>
+            <div class="card-body">
+              <p id="objectiveT">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptate, debitis! Enim reiciendis quos mollitia fuga numquam
+                dolor aperiam velit rerum eaque iusto reprehenderit repellendus,
+                quidem soluta consectetur explicabo dolorum atque!
+              </p>
+            </div>
+          </div>
+
+          <div class="card mt-4">
+            <div class="card-header background">
+              <h3>Work Experiences</h3>
+            </div>
+            <div class="card-body">
+              <ul id="weT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mt-4">
+            <div class="card-header background">
+              <h3>Acadmic Qualification</h3>
+            </div>
+            <div class="card-body">
+              <ul id="aqT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Mollitia, voluptatibus.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container mt-3 text-center">
+            <button onclick="printCv()" class="btn background">Print CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
